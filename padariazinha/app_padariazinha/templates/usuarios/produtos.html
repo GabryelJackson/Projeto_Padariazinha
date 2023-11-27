@@ -1,0 +1,54 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+}
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #ff9f00;
+    color: #fff;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #ddd;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Produtos Cadastrados:</h1>
+<table>
+    <tr>
+    <th>ID</th>
+    <th>Produto</th>
+    <th>Preço</th>
+    </tr>
+    {% for produto in produtos %}
+    <tr>
+    <td>{{produto.id_produto}}</td>
+    <td>{{produto.produto}}</td>
+    <td>{{produto.preco}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}
+

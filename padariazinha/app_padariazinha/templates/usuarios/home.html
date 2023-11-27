@@ -1,0 +1,16 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo  %}
+<section id="produtos">
+<h2>Nossos Produtos</h2>
+    <div class="produto">
+        <form action="{% url 'listagem_produtos' %}" method="post">
+        {% csrf_token %}
+        <div>
+            Produto: <input name="produto" type="text">
+            Preço: <input name="preco" type="text">
+            <button>Enviar</button>
+        </div>
+        </form>
+    </div>
+</section>
+{% endblock %}
